@@ -16,9 +16,9 @@ def extract_major_version_number(full_version_tag):
 
 def generate_docker_tag_names(commit_version_tag, commit_ref_slug):
     """
-    accepts CI_COMMIT_TAG, CI_COMMIT_REF_SLUG and OVERRIDE. return a list of image tags to build
+    accepts CI_COMMIT_TAG, CI_COMMIT_REF_SLUG. return a list of image tags to build
     if there is a TAG (it is not empty), assume stable, else CI_COMMIT_REF_SLUG (branch name).
-    DEFAULT_TAG_OVERRIDE will override the .
+    "master" will return ["master", "stable"]
     """
     if commit_version_tag == "" and commit_ref_slug == "master":
         return ["master", "latest"]
