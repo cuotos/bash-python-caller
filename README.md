@@ -7,7 +7,7 @@ for example, common.bash makes a call to `generate_docker_tag_names "${CI_COMMIT
 To add a helper function:
 
 1. create a symlink pointing to `python_helpers.py` with the name of the function you wish to create
-1. in `helper_funcs.py` create a function matching the name of the symlink you created
+1. in `functions.py` create a function matching the name of the symlink you created
 1. ensure your function returns a array of strings that will be given back to the calling bash script
 
 
