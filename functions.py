@@ -16,9 +16,14 @@ def extract_major_version_number(full_version_tag):
 
 def generate_docker_tag_names(commit_version_tag, commit_ref_slug):
     """
-    accepts CI_COMMIT_TAG, CI_COMMIT_REF_SLUG. return a list of image tags to build
-    if there is a TAG (it is not empty), assume stable, else CI_COMMIT_REF_SLUG (branch name).
+    accepts gitlabs CI_COMMIT_TAG and CI_COMMIT_REF_SLUG. return a list of image tags to build
+    if CI_COMMIT_TAG != "" then this is a tagged git commit, so assume "stable", else CI_COMMIT_REF_SLUG (branch name).
     "master" will return ["master", "stable"]
+
+    "" master = ["master, latest"] // normal commit on master branch
+    "" testBranch = ["testBranch"] // normal commit on a branch
+    6.3.4 master = ["stable", "1", "6.3.4"] //semver tagged git commit on master branch
+
     """
     if commit_version_tag == "" and commit_ref_slug == "master":
         return ["master", "latest"]
