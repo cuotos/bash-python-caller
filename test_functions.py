@@ -51,7 +51,7 @@ class TestGenerateDockerTagNames(unittest.TestCase):
         self.assertEqual(actual, expected)
 
 
-class TestSomeOtherRandomFunction(unittest.TestCase):
+class TestWhatDoYouThinkOf(unittest.TestCase):
     def test_confirms_dan_is_the_best(self):
         actual = fs.what_do_you_think_of("dan")
         expected = ['dan is the best']

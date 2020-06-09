@@ -31,8 +31,8 @@ def generate_docker_tag_names(commit_version_tag, commit_ref_slug):
 
 def what_do_you_think_of(name, drunk="False"):
     """
-    accepts a name and an optional boolean if the function is drunk. Normally only "dan" is the best, but when drunk
-    anything goes
+    accepts a string "name" and an optional boolean if the function is drunk (default=False). 
+    normally only "dan" is the best, but when drunk anything goes
     :param name: The name of the person to check
     :param drunk: Is the function drunk?
     :return: The response string (single entry list)

@@ -10,6 +10,7 @@ def default():
     print("no method found {}".format(os.path.basename(__file__)))
     sys.exit(1)
 
+
 def get_pydoc(f):
     if not f.__doc__:
             return "warning: function contains no documentation"
@@ -77,7 +78,7 @@ if __name__ == "__main__":
 
     try:
         output = main(sys.argv, f)
-        print " ".join(output)
-    except Exception, e:
+        print(" ".join(output))
+    except Exception as e:
         print(e)
         sys.exit(1)
